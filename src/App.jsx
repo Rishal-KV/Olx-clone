@@ -8,6 +8,7 @@ import Create from './Pages/Create'
 
 import { AuthContext } from './Store/FireBaseContext';
 import { onAuthStateChanged } from 'firebase/auth';
+import PostDetails from './Store/PostContext';
 
 
 
@@ -22,16 +23,20 @@ import { auth } from './Firebase/config';
 function App() {
   const {setUser} = useContext(AuthContext)
  
+ 
  useEffect(()=>{
   onAuthStateChanged(auth,(user)=>{
     setUser(user)
-    console.log(user);
+    // console.log(user);
+    
   
   })
  },[])
   return (
 
     <div>
+      <PostDetails>
+        
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -41,6 +46,7 @@ function App() {
           
         </Routes>
       </Router>
+      </PostDetails>
     </div>
   );
 }
