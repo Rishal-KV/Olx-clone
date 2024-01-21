@@ -7,12 +7,13 @@ import { PostContext } from '../../Store/PostContext';
 import { firestore } from '../../Firebase/config';
 import { useNavigate } from 'react-router-dom';
 function Posts() {
-  const { setProduct } = useContext(PostContext)
+  // const { setProduct } = useContext(PostContext)
   const [products, setProducts] = useState({})
    const navigate = useNavigate()
 
 function handleClick(key){
   navigate(`/post/${key}`)
+  console.log(key);
 }
 
   useEffect(() => {
