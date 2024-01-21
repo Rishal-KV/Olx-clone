@@ -1,7 +1,12 @@
 import React from 'react';
 
 import './View.css';
+import { useParams } from 'react-router-dom';
 function View() {
+
+const {id} =  useParams() 
+console.log(id);
+
   return (
     <div className="viewParentDiv">
       <div className="imageShowDiv">
