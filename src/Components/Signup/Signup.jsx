@@ -3,7 +3,7 @@ import {createUserWithEmailAndPassword,updateProfile} from 'firebase/auth'
 import {auth,firestore} from '../../Firebase/config'
 import { addDoc, collection } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
-
+import toast, { Toaster } from 'react-hot-toast';
 import Logo from '../../olx-logo.png';
 import './Signup.css';
 
@@ -47,11 +47,21 @@ export default function Signup() {
           navigate('/login')
         })
       })
+    }).catch((err) => {
+      if (err.code == "auth/email-already-in-use" ) {
+        
+        toast.error("email-already-in-use")
+        
+      }
     })
     
   }
   return (
     <div>
+    <Toaster
+  position="top-center"
+  reverseOrder={false}
+/>
       <div className="signupParentDiv">
         <img width="280px" height="280px" src={Logo}></img>
         <form onSubmit={handleSubmit}>

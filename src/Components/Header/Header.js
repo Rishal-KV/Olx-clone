@@ -56,7 +56,9 @@ function Header() {
     <a onClick={() =>  handleLogin()} class="dropdown-item" >Log out</a>
    
   </div>
-</div> : <a>Login</a>
+</div> :<Link className='text-dark' to='/login'>
+<a style={{cursor : 'pointer'}}>Login</a>
+</Link>
   }
           <hr />
         </div>

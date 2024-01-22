@@ -9,7 +9,7 @@ import ViewPost from './Pages/ViewPost';
 
 import { AuthContext } from './Store/FireBaseContext';
 import { onAuthStateChanged } from 'firebase/auth';
-import PostDetails from './Store/PostContext';
+
 
 
 
@@ -36,7 +36,7 @@ function App() {
   return (
 
     <div>
-      <PostDetails>
+     
         
       <Router>
         <Routes>
@@ -48,7 +48,7 @@ function App() {
           
         </Routes>
       </Router>
-      </PostDetails>
+    
     </div>
   );
 }
